@@ -21,7 +21,7 @@ total_payment = 0
 #  type "a" - for annuity monthly payment amount,
 #  type "n" - number of monthly payments:''')
 if ann_or_diff == "annuity":
-    #  number of periods calculating ######DONE######
+    #  number of periods calculating
     if periods == None and principal > 0 and payment > 0 and interest != None:
         loan_principal = principal
         monthly_payment = payment
@@ -55,7 +55,7 @@ if ann_or_diff == "annuity":
         overpayment = (ceil(monthly_payment) * ceil(n)) - loan_principal
         print(f"Overpayment = {round(overpayment)}")
 
-    #  Principal calculation #######DONE######   
+    #  Principal calculation   
     elif principal == None and payment > 0 and periods > 0 and interest != None:
         annuity_payment = payment
         number_periods = periods
@@ -66,7 +66,7 @@ if ann_or_diff == "annuity":
         overpayment = (ceil(payment) * number_periods) - loan_principal
         print(f"Overpayment = {round(overpayment)}")
 
-    #  Monthly payment calculation #####DONE#####
+    #  Monthly payment calculation
     elif payment == None and principal > 0 and periods > 0 and interest != None:
         loan_principal = principal
         number_periods = periods
@@ -80,8 +80,8 @@ if ann_or_diff == "annuity":
     else:
         print("Incorrect parameters")
 
-#   differentiate payment #######DONE#######
-elif ann_or_diff == "diff" and interest != None and interest > 0 and principal > 0  and periods > 0 and payment == None:
+#   differentiate payment
+if ann_or_diff == "diff" and interest != None and interest > 0 and principal > 0  and periods > 0 and payment == None:
     i = interest / 12 / 100
     month_num = 1
     for x in range(periods):
